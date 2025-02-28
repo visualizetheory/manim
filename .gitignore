@@ -1,0 +1,15 @@
+# cache folders
+**/__pycache__
+**/media/
+
+# old projects
+3danimations/
+gravity/
+guitarstring/
+ode/
+
+# not reviewed yet
+butterfly_effect/
+building_the_guitar/
+
+
