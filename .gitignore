@@ -8,8 +8,7 @@ gravity/
 guitarstring/
 ode/
 
-# not reviewed yet
-butterfly_effect/
-building_the_guitar/
+# exclude images
+electric_guitar.png
 
 
