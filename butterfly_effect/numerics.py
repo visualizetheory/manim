@@ -19,13 +19,13 @@ class DoublePendelumNumerics():
         # unpack
         theta, theta_dot, phi, phi_dot = y
         # auxillary variable
-        R_1 = phi_dot * (theta_dot - phi_dot) * sin(theta - phi) - theta_dot * phi_dot * sin(theta - phi) - 2 * (g / l) * sin(theta)
-        R_2 = theta_dot * (theta_dot - phi_dot) * sin(theta - phi) + theta_dot * phi_dot * sin(theta - phi) - (g / l) * sin(phi)
+        r_1 = phi_dot * (theta_dot - phi_dot) * sin(theta - phi) - theta_dot * phi_dot * sin(theta - phi) - 2 * (g / l) * sin(theta)
+        r_2 = theta_dot * (theta_dot - phi_dot) * sin(theta - phi) + theta_dot * phi_dot * sin(theta - phi) - (g / l) * sin(phi)
         # Euler-Lagrange equations
         theta_updated = theta_dot
-        theta_dot_updated = (1 / (2 - cos(theta - phi)**2)) * (R_1 - R_2 * cos(theta - phi))
+        theta_dot_updated = (1 / (2 - cos(theta - phi)**2)) * (r_1 - r_2 * cos(theta - phi))
         phi_updated = phi_dot
-        phi_dot_updated = (1 / (2 - cos(theta - phi)**2)) * (-R_1 * cos(theta - phi) + 2 * R_2)
+        phi_dot_updated = (1 / (2 - cos(theta - phi)**2)) * (-r_1 * cos(theta - phi) + 2 * r_2)
         # pack
         y_updated = array([theta_updated, theta_dot_updated, phi_updated, phi_dot_updated])
         return y_updated
