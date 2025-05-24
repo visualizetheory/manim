@@ -71,9 +71,7 @@ run_times = [2.5, 2.0, 1.5, 1.5]
 
 class EigenVectorClockScene(Scene):
     def construct(self):
-        #self.add(ax)
-        self.play(Write(title), run_time=1.0)
-        self.play(FadeIn(ax, run_time=1.5), Create(clock))
+        self.play(Write(title, run_time=1.0), FadeIn(ax, run_time=1.5), Create(clock))
         
         for degree, abs_eigenvalue, eigenvalue, run_time in zip(degrees, abs_eigenvalues, eigenvalues, run_times):
             self.play(theta.animate.set_value(degree), run_time=run_time)
